@@ -13,6 +13,9 @@
           background: -o-linear-gradient(left, #f2fcfe, #1c92d2);
           background: linear-gradient(to right, #f2fcfe, #1c92d2);
         }
+        .star {
+          color: red;
+        }
         .flex li {
           display: flex;
           flex-wrap: wrap;
@@ -45,11 +48,9 @@
         var ln = document.getElementById('lastName');
         document.getElementById('showFn').innerHTML = fn.value;
         document.getElementById('showLn').innerHTML = ln.value;
-
         //Gender
         var getGender = document.querySelector('li#gender input[name="gender"]:checked');
         document.getElementById('showGender').innerHTML = getGender.value;
-
         //Courses
         var courses = document.getElementsByClassName('courses');
         var getCourses = '';
@@ -66,20 +67,16 @@
         } else if (counter === 0){
         //Validation Alert
           alert("Please check at least one course!");
-        }
-        else {
+        } else {
           output = getCourses;
         }
         document.getElementById('showCourses').innerHTML = output;
-
         //Phone
         var phone = document.getElementById('phone');
         document.getElementById('showPhone').innerHTML = phone.value;
-
         //Address
         var address = document.getElementById('address');
         document.getElementById('showAddress').innerHTML = address.value;
-
         //Country
         var country = document.getElementById('country');
         var getCountry = country.options[country.selectedIndex].text;
@@ -92,16 +89,16 @@
     <form>
       <ul class="flex">
         <li>
-          <label><strong>First Name</strong></label>
+          <label><strong>First Name <span class="star">*</span> </strong></label>
           <input class="inputBox" id="firstName" type="text" placeholder="Enter your First name">
         </li>
         <li>
-          <label><strong>Last Name</strong></label>
+          <label><strong>Last Name <span class="star">*</span> </strong></label>
           <input class="inputBox" id="lastName" type="text" placeholder="Enter your Last name">
         </li>
 
         <li id="gender">
-          <label><strong>Gender</strong></label>
+          <label><strong>Gender <span class="star">*</span> </strong></label>
           <input type="radio" name="gender" value="male" checked>
           <strong>Male</strong>&nbsp;&nbsp;
           <input type="radio" name="gender" value="female">
@@ -109,7 +106,7 @@
         </li>
 
         <li>
-          <label><strong>Courses Interested</strong></label>
+          <label><strong>Courses Interested <span class="star">*</span> </strong></label>
           <input class="courses" type="checkbox" name="course" value="Java">
           <strong>Java</strong>&nbsp;&nbsp;
           <input class="courses" type="checkbox" name="course" value="CSS">
@@ -119,17 +116,17 @@
         </li>
 
         <li>
-          <label><strong>Phone</strong></label>
+          <label><strong>Phone <span class="star">*</span> </strong></label>
           <input class="inputBox" id="phone" type="text" placeholder="Enter your Phone number">
         </li>
 
         <li>
-          <label><strong>Address</strong></label>
+          <label><strong>Address <span class="star">*</span> </strong></label>
           <textarea id="address" name="address" rows="3" cols="23"></textarea>
         </li>
 
         <li>
-          <label><strong>Country</strong></label>
+          <label><strong>Country <span class="star">*</span> </strong></label>
           <select id="country">
             <option>[Choose Yours]</option>
             <option>Canada</option>
